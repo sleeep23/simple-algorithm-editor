@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="monaco-editor/min/vs/editor/editor.main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Offline Code Editor</h1>
+    <div id="editorContainer" contenteditable="true"></div>
+    <div class="btn-container">
+        <button onclick="runCode()">Run</button>
+        <button onclick="saveFile()">Save File</button>
+    </div>
+
+    <h3>Test Cases</h3>
+    <div id="testCases">
+        <div class="testCase">
+            <label>
+                <textarea class="input" placeholder="Input">{ "a": 1, "b": 2 }</textarea>
+            </label>
+            <label>
+                <textarea class="expectedOutput" placeholder="Expected Output">3</textarea>
+            </label>
+        </div>
+        <div class="testCase">
+            <label>
+                <textarea class="input" placeholder="Input">{ "a": 1, "b": 2 }</textarea>
+            </label>
+            <label>
+                <textarea class="expectedOutput" placeholder="Expected Output">4</textarea>
+            </label>
+        </div>
+    </div>
+    <pre id="output"></pre>
+    <a id="saveLink" download="code.js">Save your file</a>
+
+    <script src="monaco-editor/min/vs/loader.js"></script>
+
+    <script src="editor.js"></script>
+    <script src="fileHandler.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
